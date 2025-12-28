@@ -1,0 +1,41 @@
+# Interest Clustering Configuration
+
+# Embedding Configuration
+embeddings:
+  model: "sentence-transformers/all-mpnet-base-v2"
+  batch_size: 32
+  device: "auto"  # auto, cuda, cpu, or mps
+  normalize: true
+
+# Leiden Clustering Configuration
+leiden:
+  n_neighbors: 15
+  resolution: 1.0
+  min_similarity: 0.1
+  random_state: 42
+
+# K-Medoids Configuration
+kmedoids:
+  capacity: 5
+  max_iterations: 10
+  random_state: 42
+
+# UMAP Visualization Configuration
+umap:
+  n_neighbors: 15
+  min_dist: 0.1
+  metric: "jaccard"
+  random_state: 42
+
+# Output Configuration
+output:
+  directory: "output"
+  save_embeddings: true
+  save_plots: true
+  plot_dpi: 300
+  plot_format: "png"
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
